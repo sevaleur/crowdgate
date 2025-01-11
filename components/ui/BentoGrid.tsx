@@ -3,6 +3,7 @@
 import Lottie from "react-lottie";
 import animationData from '@/data/confetti.json'
 import MagicButton from "./MagicButton";
+import Image from "next/image";
 
 import { cn } from "@/utils/cn";
 import { BackgroundGradientAnimation } from "./GradientBg";
@@ -20,7 +21,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto sm:px-1",
+        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto px-[2rem] sm:px-0",
         className
       )}
     >
@@ -67,28 +68,32 @@ export const BentoGridItem = ({
       }}
     >
       <div className={`${id === 6 && 'flex justify-center' } h-full`}>
-        <div className="w-full h-full absolute">
+        <div className="w-full h-full absolute object-cover">
           { img && (
-            <img 
+            <Image 
               src={img} 
               alt={img}
-              className={cn(imgClassName, 'object-cover, object-center')}
+              className={cn(imgClassName, 'object-cover, object-center w-full h-fit')}
+              width={0}
+              height={0}
+              sizes="100%"
             />  
           )}
         </div>
         <div className={`absolute right-0 -bottom-5 ${id === 5 && 'w-full opacity-80'}`}>
           { spareImg && (
-            <img 
+            <Image 
               src={spareImg}
               alt={spareImg}
               className={ 'object-cover, object-center w-full h-full'}
+              width={0}
+              height={0}
+              sizes="100%"
             />
           )}
         </div>
         { id === 6 && (
-          <BackgroundGradientAnimation>
-            {/* <div className="absolute z-50 flex items-center justify-center text-white font-bold"/> */}
-          </BackgroundGradientAnimation>
+          <BackgroundGradientAnimation />
         )}
         <div className={cn(
           titleClassName, 'relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10'

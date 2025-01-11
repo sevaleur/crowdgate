@@ -10,7 +10,7 @@ const FeaturedEvents = () => {
   ))
 
   return (
-    <section id='#events' className='my-40 w-full'>
+    <section id='events' className='my-40 w-full'>
       <h1 className='heading'>
         The events waiting { ' ' }
         <span className='text-purple'>

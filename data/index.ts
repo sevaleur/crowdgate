@@ -1,17 +1,29 @@
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Events", link: "#events" },
-  { name: "Partners", link: "#partners" },
   { name: "Contact", link: "#contact" },
 ];
+import { Header } from '@/typings'; 
+import { groq } from "next-sanity";
+import { client } from "@/sanity/lib/client";
+
+const query = groq`
+  *[_type == "hero"]
+`; 
+
+export const getHero = async() => {
+  const heroData: Header[] = await client.fetch(query); 
+
+  return heroData; 
+} 
 
 export const globeConfig = {
   pointSize: 4,
-  globeColor: "#062056",
+  globeColor: "#092f7d",
   showAtmosphere: true,
   atmosphereColor: "#FFFFFF",
   atmosphereAltitude: 0.1,
-  emissive: "#062056",
+  emissive: "#092f7d",
   emissiveIntensity: 0.1,
   shininess: 0.9,
   polygonColor: "rgba(255,255,255, .8)",
@@ -446,7 +458,7 @@ export const gridItems = [
   },
   {
     id: 6,
-    title: "Do you want to learn more?",
+    title: "Do you want to be a partner?",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
