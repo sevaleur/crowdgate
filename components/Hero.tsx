@@ -15,7 +15,7 @@ const Hero = () => {
     <header className='pb-20 pt-0 sm:pt-36 h-full max-w-7xl w-full'>
       <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto relative w-full">
         <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-0 sm:px-4">
-          <div className="flex justify-center items-center my-0 z-20 absolute top-0 w-full h-full sm:left-0 sm:justify-start">
+          <div className="flex justify-center items-center my-0 z-20 absolute top-0 w-full sm:w-fit h-full sm:left-0 sm:justify-start">
             <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center sm:items-start">
               <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
                 Can&apos;t make it? We got you

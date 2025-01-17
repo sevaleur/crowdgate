@@ -3,19 +3,6 @@ export const navItems = [
   { name: "Events", link: "#events" },
   { name: "Contact", link: "#contact" },
 ];
-import { Header } from '@/typings'; 
-import { groq } from "next-sanity";
-import { client } from "@/sanity/lib/client";
-
-const query = groq`
-  *[_type == "hero"]
-`; 
-
-export const getHero = async() => {
-  const heroData: Header[] = await client.fetch(query); 
-
-  return heroData; 
-} 
 
 export const globeConfig = {
   pointSize: 4,
